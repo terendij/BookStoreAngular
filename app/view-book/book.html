@@ -1,0 +1,18 @@
+<div>
+    <h4>{{bookCtrl.bookFromURL.title | uppercase}}</h4>
+    <table>
+        <tr>
+            <td>
+                {{'Author : ' +bookCtrl.bookFromURL.author}}
+                <br />
+                Price : {{bookCtrl.bookFromURL.price | currency}}
+                <br />
+                <img src="{{bookCtrl.bookFromURL.img}}" />
+                <div etoile etoiles="bookCtrl.bookFromURL.rating" />
+            </td>
+            <td>
+                <div ng-bind-html="bookCtrl.bookFromURL.desc"></div>
+            </td>
+        </tr>
+    </table>
+</div>

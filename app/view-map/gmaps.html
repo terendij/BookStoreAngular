@@ -1,0 +1,10 @@
+<div class="gmaps"></div>
+<form name="markersForm" ng-submit="addMarker()">
+    <input ng-model="markerLbl" type="text" required />
+    <input type="submit" name="add" ng-disabled="markersForm.$invalid" />
+</form>
+<button ng-repeat="marker in markers" ng-click="goto(marker)">
+    {{ marker.label }}
+</button>
+        <br />
+<lengend ng-transclude></lengend>

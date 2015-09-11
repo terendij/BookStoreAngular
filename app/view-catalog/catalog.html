@@ -1,0 +1,59 @@
+<div>
+   <h2>Catalog</h2>
+    <p>
+       Filtrer par titre : <input type="text" ng-model="catalogCtrl.state.fullText.title" />
+    </p>
+    <p>
+        Filtrer par prix de : <input type="text" ng-model="catalogCtrl.state.priceMin" /> à <input type="text" ng-model="catalogCtrl.state.priceMax" />
+    </p>
+    <p>
+        Trier par : <select ng-model="catalogCtrl.state.selectSort" ng-options="sort.label for sort in catalogCtrl.sortOptions"></select>
+    </p>
+    <p>
+        Résultat(s) de la recherche : <b>{{ result.length }}</b>
+    </p>
+    <table border="1">
+        <tr ng-repeat="book in catalogCtrl.booksFromURL
+                | orderBy:catalogCtrl.state.selectSort.data
+                | filter:catalogCtrl.state.fullText
+                | interval:'price':catalogCtrl.state.priceMin:catalogCtrl.state.priceMax
+                as result">
+            <td>
+                <a href="#/book/{{book._id.$oid}}"><img ng-src="{{book.img}}" /></a>
+                <br />
+                <br />
+                <div etoile etoiles="book.rating" />
+            </td>
+            <td>
+                <span style="font-weight: bold">{{book.title}}</span>
+                <br />
+                {{'Author : ' +book.author}}
+                <br />
+                Price : {{book.price | currency}}
+            </td>
+            <td>
+                <input type="button" value="Ajouter" ng-click="catalogCtrl.addBook(book)" />
+            </td>
+        </tr>
+    </table>
+    <p>
+    <table object-table
+           data="catalogCtrl.booksFromURL"
+           display="20"
+           headers=",Title , Author, Price, Rating"
+           fields="title , author, price, rating"
+           sorting="compound"
+           editable="false"
+            >
+        <tbody>
+            <tr>
+                <td><a href="#/book/{{::item._id.$oid}}"><img ng-src="{{::item.img}}" /></a></td>
+                <td>{{::item.title}}</td>
+                <td>{{::item.author}}</td>
+                <td>{{::item.price | currency}}</td>
+                <td>{{::item.rating}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </p>
+</div>

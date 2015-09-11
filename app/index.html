@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="bookStoreApp">
+<head>
+    <meta charset="utf-8">
+    <title>{{routeTitle}}</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="view-catalog/catalog.js"></script>
+    <script src="view-inbox/inbox.js"></script>
+    <script src="components/interval.js"></script>
+    <script src="components/inbox/inbox.js"></script>
+    <script src="components/state/state.js"></script>
+    <script src="components/catalog/catalogService.js"></script>
+    <script src="components/etoile/etoile.js"></script>
+    <script src="view-map/map.js"></script>
+    <script src="view-map/mapDirective.js"></script>
+    <script src="view-book/book.js"></script>
+    <script src="https://code.angularjs.org/1.3.4/i18n/angular-locale_fr-fr.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-object-table/build/object-table-style.css">
+    <script type="text/javascript" src="bower_components/angular-object-table/build/object-table.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+</head>
+<body>
+    <h1>Book Store angular</h1>
+    <h5><a href="#/catalog">Catalogs</a>  <a href="#/inbox">Panier</a> <a href="#/map">Map</a></h5>
+    <div ng-view></div>
+</body>
+</html>

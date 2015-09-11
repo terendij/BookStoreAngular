@@ -1,0 +1,27 @@
+<h2>Panier</h2>
+<p>
+    <table border="2">
+        <tr>
+            <td>Label</td>
+            <td>Rate</td>
+            <td>Unit price</td>
+            <td>Quantity</td>
+            <td>HT</td>
+            <td>TTC</td>
+            <td></td>
+        </tr>
+        <tr ng-repeat="item in inboxCtrl.rows" ng-class="{big : inboxCtrl.isBig(item)}">
+            <td>{{item.book.title}}</td>
+            <td><div etoile etoiles="item.book.rating" /></td>
+            <td>{{item.book.price}}</td>
+            <td><input type="number" ng-model="item.quantity" size="8" /></td>
+            <td>{{inboxCtrl.calcHTAmount(item) | currency}}</td>
+            <td>{{inboxCtrl.calcTTCAmount(item)| currency}}</td>
+            <td><input type="button" value="del" ng-click="inboxCtrl.delItem(item)" /></td>
+        </tr>
+    </table>
+    Total HT : {{inboxCtrl.htTot | currency}}
+    <br />
+    Total TTC : {{inboxCtrl.ttcTot | currency}}
+    <br />
+</p>

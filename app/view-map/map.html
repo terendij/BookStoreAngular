@@ -1,0 +1,19 @@
+<h2>Map</h2>
+<div class="repeat" ng-repeat="map in mapCtrl.maps">
+
+    <gmaps center="map.center" zoom="map.zoom" >
+        Carte de {{ map.label }}
+    </gmaps>
+
+    <div class="data">
+        <p>
+            <label>Latitude</label><input type="number" ng-model = "map.center.lat"/>
+        </p>
+        <p>
+            <label>Longitude</label><input type="number"  ng-model = "map.center.lng"/>
+        </p>
+        <p>
+            <label>Zoom</label><input type="number" ng-model = "map.zoom"/>
+        </p>
+    </div>
+</div>
