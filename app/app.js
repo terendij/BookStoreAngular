@@ -9,7 +9,7 @@ angular.module('bookStoreApp',
             'bookModule',
             'appComponents',
             'inboxModule',
-            'objectTable',
+            /*'objectTable',*/
             'directives',
             'mapDirective'
         ]).

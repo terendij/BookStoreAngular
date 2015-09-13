@@ -37,23 +37,23 @@
         </tr>
     </table>
     <p>
-    <table object-table
-           data="catalogCtrl.booksFromURL"
-           display="20"
-           headers=",Title , Author, Price, Rating"
-           fields="title , author, price, rating"
-           sorting="compound"
-           editable="false"
-            >
-        <tbody>
-            <tr>
-                <td><a href="#/book/{{::item._id.$oid}}"><img ng-src="{{::item.img}}" /></a></td>
-                <td>{{::item.title}}</td>
-                <td>{{::item.author}}</td>
-                <td>{{::item.price | currency}}</td>
-                <td>{{::item.rating}}</td>
-            </tr>
-        </tbody>
-    </table>
+        <!--<table object-table
+               data="catalogCtrl.booksFromURL"
+               display="20"
+               headers=",Title , Author, Price, Rating"
+               fields="title , author, price, rating"
+               sorting="compound"
+               editable="false"
+                >
+            <tbody>
+                <tr>
+                    <td><a href="#/book/{{::item._id.$oid}}"><img ng-src="{{::item.img}}" /></a></td>
+                    <td>{{::item.title}}</td>
+                    <td>{{::item.author}}</td>
+                    <td>{{::item.price | currency}}</td>
+                    <td>{{::item.rating}}</td>
+                </tr>
+            </tbody>
+        </table>-->
     </p>
 </div>
